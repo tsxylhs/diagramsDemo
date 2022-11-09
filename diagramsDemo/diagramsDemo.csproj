@@ -46,4 +46,8 @@
         <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Z.Blazor.Diagrams" Version="3.0.0-beta.4" />
+    </ItemGroup>
+
 </Project>

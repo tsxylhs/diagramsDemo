@@ -1,0 +1,38 @@
+﻿@page "/drag-and-drop"
+
+
+<div class="row h-100">
+    <div class="col-4">
+        @* Toolbox *@
+        <div class="row h-100 p-4 no-gutters" style="background: #eee;">
+            <div class="col-6">
+                <div class="text-center" draggable="true" @ondragstart="() => OnDragStart(0)">
+                    <div style="pointer-events:none;">
+                        
+                        <span>Default Node</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="text-center" draggable="true" @ondragstart="() => OnDragStart(1)">
+                    <div style="pointer-events:none;">
+                       
+                        <span>Bot Answer Node</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-8" ondragover="event.preventDefault();" @ondragover:preventDefault @ondrop="OnDrop">
+       <div style="width:100vw; height: 100vh">
+       <CascadingValue Value="_blazorDiagram">
+            <DiagramCanvas>
+             @*<Widgets>
+            <NavigatorWidget Width="300" Height="200" Style="position: absolute; bottom: 15px; right: 15px; border: 1px solid black;"></NavigatorWidget>
+            <GridWidget Size="75" Mode="GridMode.Line" ZoomThreshold="0.5"></GridWidget>
+        </Widgets>*@
+            </DiagramCanvas>
+        </CascadingValue>
+        </div>
+    </div>
+</div>
